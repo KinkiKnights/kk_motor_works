@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(パッケージ名)
+project(motor_works)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -13,11 +13,11 @@ find_package(sensor_msgs REQUIRED)
 find_package(kk_driver_msg REQUIRED)
 
 ## 
-add_executable(ノード名 src/main.cpp)
-ament_target_dependencies(ノード名 std_msgs sensor_msgs rclcpp kk_driver_msg)
+add_executable(motor_works src/main.cpp)
+ament_target_dependencies(motor_works std_msgs sensor_msgs rclcpp kk_driver_msg)
 
 install(TARGETS
-  ノード名
+  motor_works
   DESTINATION lib/${PROJECT_NAME}
 )
 
